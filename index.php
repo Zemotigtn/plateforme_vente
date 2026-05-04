@@ -7,35 +7,7 @@ define("host","localhost");
       if(!$connect){
         die("Connexion échouée:".$connect->error);
       }
-      else{  
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Plateforme</title>
-  </head>
-  <body>
-    <section class="main">
-      <form class="color" name="form1" id="f1" method="POST">
-        <div>
-          <label for="login">Login:</label><br />
-          <input class="login" id="log" name="login" type="text"/><br />
-        </div>
-        <div>
-          <label for="password">Password:</label><br />
-          <input class="password" name="password" type="password" id="password" /><br />
-        </div>
-        <input  type="submit" value="Se connecter" class="subnit"  name="connecter"/>
-        <button type="submit" value="" class="inscrire" /> <a href="formulaireuser.php">S'inscrire</a></button>
-      </form>
-       <?php
-      echo " <span style='display:none;'>Connexion à la BDD réussie</span> </br>";
-}
-?>
-    </section>
 <?php
   @$login=$_POST["login"];
   @$password=$_POST["password"];
@@ -63,7 +35,6 @@ define("host","localhost");
     }
   }
 ?>
-  </body>
-
-
-</html>
+<?php
+  include "index.html";
+?>
