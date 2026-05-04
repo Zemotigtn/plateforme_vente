@@ -1,14 +1,6 @@
 <?php
-      define("host","localhost");
-      define("user","root");
-      define("pass","");
-      define("nameBDD","essaiebdd");
-      $connect=new mysqli(host,user,pass,nameBDD);
-      if(!$connect){
-        die("Connexion échouée:".$connect->error);
-      }
-      else{  
-  ?>
+  include "connexion.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,10 +35,6 @@
         <input type="reset" value="Annuler" name="annuler">
       </fieldset>
     </form>
-    <?php
-      echo " <span style='display:none;'>Connexion à la BDD réussie</span> </br>";
-      }
-    ?>
     <?php
       @$iduser=$_POST["id"];
       @$nom=$_POST["nom"];

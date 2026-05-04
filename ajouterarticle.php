@@ -1,21 +1,13 @@
 <?php
-      define("host","localhost");
-      define("user","root");
-      define("pass","");
-      define("nameBDD","essaiebdd");
-      $connect=new mysqli(host,user,pass,nameBDD);
-      if(!$connect){
-        die("Connexion échouée:".$connect->error);
-      }
-      else{  
-  ?>
+  include "connexion.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="ajouterarticle.css">
-    <title>essaiBDD</title>
+    <title>Ajouter article</title>
   </head>
   <body>
     <form  action="" method="post">
@@ -35,7 +27,6 @@
     </form>
     <?php
       // echo "Connexion réussie </br>";
-      }
     ?>
     <?php
       @$idarticle=$_POST["id"];

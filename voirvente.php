@@ -1,17 +1,13 @@
 <?php
 // ── Connexion ────────────────────────────────────────────────────────────────
-define("host","localhost");
-define("user","root");
-define("pass","");
-define("nameBDD","essaiebdd");
 
+
+  include "connexion.php";
 // Force mysqli à lancer des exceptions sur toute erreur SQL. Permet d'utiliser le bloc try {} catch {} un peu plus bas.
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $connect = new mysqli(host, user, pass, nameBDD);
-if ($connect->connect_error) {
-    die("Connexion échouée : " . $connect->connect_error);
-}
+
 $connect->set_charset('utf8mb4'); //On force la communication entre PHP et MySQL en encodage utf8mb4
 
 // ── Variables de message ──────────────────────────────────────────────────────

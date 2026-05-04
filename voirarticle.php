@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="voirarticle.css">
 </head>
 <body>
-    <?php
-        define("host","localhost");
-      define("user","root");
-      define("pass","");
-      define("nameBDD","essaiebdd");
-      $connect=new mysqli(host,user,pass,nameBDD);
+    
+ <?php
+  include "connexion.php";
+?>
+<?php
       $sql="SELECT * FROM article ORDER BY catégorie";
       $row=$connect->query($sql);
       if(!$row){
