@@ -1,0 +1,71 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+header img {
+  height: 70px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+header img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px #a1c4fd);
+}
+body {
+  margin: 0;
+  background: #f9f9f9; /* blanc cassé très doux */
+  color: #333;
+}
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  text-align: center;
+  margin: 40px 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+main a {
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 12px 20px;
+  background: #a1c4fd; /* bleu pastel */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease; 
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+main a:hover {
+  background: #89f7fe; /* turquoise clair */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+
+footer a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #a1c4fd;
+} 

@@ -1,0 +1,269 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6f9;
+  color: #1a1a2e;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn-retour {
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  color: #1a1a2e;
+}
+.btn-retour:hover {
+  background: #f1f5f9;
+}
+
+/* ── Carte client ── */
+.client-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.client-header {
+  background: #6366f1;
+  color: #fff;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.client-header:hover {
+  background: #4f46e5;
+}
+
+.client-infos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.client-nom {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.client-details {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.badge-nb {
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.chevron {
+  font-size: 18px;
+  transition: transform 0.3s;
+  margin-left: 10px;
+}
+.chevron.ouvert {
+  transform: rotate(180deg);
+}
+
+/* ── Corps client ── */
+.client-body {
+  padding: 1.25rem;
+  display: none;
+}
+.client-body.ouvert {
+  display: block;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /*auto-fit :applique le grid automatiquement le graal du responsive*/
+  gap: 10px;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.info-item label {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.info-item span {
+  font-size: 14px;
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+/* ── Commande ── */
+.commande-bloc {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.commande-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.commande-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.commande-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.montant {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.statut {
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.statut-en_cours {
+  background: #fef3c7;
+  color: #92400e;
+}
+.statut-payee {
+  background: #dcfce7;
+  color: #166534;
+}
+.statut-annulee {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ── Tableau produits ── */
+.produits-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.produits-table th {
+  text-align: left;
+  padding: 8px 14px;
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.produits-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid #f8fafc;
+  color: #334155;
+}
+
+.produits-table tr:last-child td {
+  border-bottom: none;
+}
+
+.produits-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+/* ── Vide ── */
+.vide {
+  text-align: center;
+  padding: 3rem;
+  color: #94a3b8;
+  font-size: 15px;
+}
+footer {
+  text-align: center;
+  margin-top: 30px;
+}
+footer button {
+    background-color: #a1c4fd;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+footer button a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer button:hover {
+  background-color: #89f7fe;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

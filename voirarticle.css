@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f9f9f9; /* blanc cassé frais */
+  color: #333;
+  padding: 20px;
+}
+h3,
+h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+button {
+  background: #a1c4fd; /* bleu pastel */
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px auto;
+  display: block;
+}
+button a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+button:hover {
+  background: #89f7fe; /* turquoise clair */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+table th {
+  background: #a1c4fd; /* bleu pastel */
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:nth-child(even) {
+  background: #f7f7f7; /* alternance douce */
+}
+
+table tr:hover {
+  background: #eaf4ff; /* survol lumineux */
+}
+footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+footer button a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer button:hover {
+  color: #a1c4fd;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
