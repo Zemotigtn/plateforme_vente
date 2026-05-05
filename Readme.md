@@ -1,5 +1,9 @@
 # Plateforme de gestion PHP
 
+**Auteur:** AMOUSSOU Lewis
+
+**Classe:** IG2/B
+
 Ce projet est une petite application PHP/MySQL de gestion d'utilisateur, d'articles et de ventes. Il fonctionne localement avec XAMPP (Apache + MySQL) et utilise des pages PHP simples pour l'authentification, l'inscription et l'affichage des listes.
 
 ## Fonctionnalités
