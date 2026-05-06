@@ -127,7 +127,10 @@ h1 {
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /*auto-fit :applique le grid automatiquement le graal du responsive*/
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(160px, 1fr)
+  ); /*auto-fit :applique le grid automatiquement le graal du responsive*/
   gap: 10px;
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem;
@@ -250,7 +253,7 @@ footer {
   margin-top: 30px;
 }
 footer button {
-    background-color: #a1c4fd;
+  background-color: #a1c4fd;
   border: none;
   padding: 12px 20px;
   border-radius: 8px;

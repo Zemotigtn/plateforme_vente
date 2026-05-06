@@ -10,7 +10,7 @@ footer {
   margin-top: 30px;
 }
 footer button {
-    background-color: #a1c4fd;
+  background-color: #a1c4fd;
   border: none;
   padding: 12px 20px;
   border-radius: 8px;
@@ -38,7 +38,7 @@ table {
   margin: 0 auto;
   border-collapse: collapse; /*les bordures arrondies fusionnent. le rendu est plus propre et plus professionnelle*/
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
 }

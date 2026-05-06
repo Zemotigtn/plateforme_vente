@@ -1,7 +1,7 @@
 <?php
 // ── Connexion ─────────────────────────────────────────────────────────────────
 
-  include "connexion.php";
+include "connexion.php";
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -55,7 +55,7 @@ while ($client = $resultClients->fetch_assoc()) {
             $produits[] = $produit;
         }
 
-        $commande['produits'] = $produits;// on attache les produits à la commande;
+        $commande['produits'] = $produits; // on attache les produits à la commande;
         $commandes[] = $commande; // on ajoute cette commande au client
     }
 
@@ -65,143 +65,146 @@ while ($client = $resultClients->fetch_assoc()) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="voirlistevente.css">
     <title>Liste des ventes par client</title>
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
 
-    <div class="page-header">
-        <h1>Ventes par client</h1>
-        <a href="voirvente.php" class="btn-retour">Nouveau enregistrement</a>
-    </div>
+        <div class="page-header">
+            <h1>Ventes par client</h1>
+            <a href="voirvente.php" class="btn-retour">Nouveau enregistrement</a>
+        </div>
 
-    <?php if (empty($clients)): ?>
-        <div class="vide">Aucune vente enregistrée pour le moment.</div>
+        <?php if (empty($clients)): ?>
+            <div class="vide">Aucune vente enregistrée pour le moment.</div>
 
-    <?php else: ?>
-        <?php foreach ($clients as $i => $client): ?>
-            <?php
+        <?php else: ?>
+            <?php foreach ($clients as $i => $client): ?>
+                <?php
                 $initiales = strtoupper(substr($client['nom'], 0, 1) . substr($client['prenom'], 0, 1)); //strtoupper transforme en majuscules
                 $nbCommandes = count($client['commandes']);
-            ?>
-            <div class="client-card">
+                ?>
+                <div class="client-card">
 
-                <!-- En-tête client cliquable -->
-                <div class="client-header" onclick="toggleClient(<?= $i ?>)">
-                    <div class="client-infos">
-                        <div class="avatar"><?= htmlspecialchars($initiales) ?></div>
-                        <div>
-                            <div class="client-nom">
-                                <?= htmlspecialchars($client['nom']) ?>
-                                <?= htmlspecialchars($client['prenom']) ?>
-                            </div>
-                            <div class="client-details">
-                                <?= htmlspecialchars($client['ville']) ?> •
-                                <?= htmlspecialchars($client['mail']) ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                        <span class="badge-nb"><?= $nbCommandes ?> commande<?= $nbCommandes > 1 ? 's' : '' ?></span>
-                        <span class="chevron" id="chevron-<?= $i ?>"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3klEQVR4AeySMQrCQBBFg5ewEBHxHOJtLOxsvIONR7HwCiJeQkTEwmP4XsAUurvZFCkCG+ZnJzN//l+GjKqen2LQuuCyorKiascOxiAW9raxpvXUX7SBsAcXMAG/Yc3egcYaBCNlcGTiBhZAIQVJ6zC3Zk/Oqa4GXimDN/wleIAZUFBhYW7Nnhy5UP4jZSDbQQXufCh45rwCc2v25FAKR5uBUy9eK+Bt55xTYG7NHp/xyDFwWiFv66n4N7eXRK6BIoornHVzB0QXA/ne/mmSi64GuboNrxg0q4glw1/RBwAA//8ha2D3AAAABklEQVQDABNPIjF5ZB/4AAAAAElFTkSuQmCC"/></span>
-                    </div>
-                </div>
-
-                <!-- Corps client -->
-                <div class="client-body" id="body-<?= $i ?>">
-
-                    <!-- Infos client -->
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <label>Âge</label>
-                            <span><?= htmlspecialchars($client['age']) ?> ans</span>
-                        </div>
-                        <div class="info-item">
-                            <label>Ville</label>
-                            <span><?= htmlspecialchars($client['ville']) ?></span>
-                        </div>
-                        <div class="info-item">
-                            <label>Adresse</label>
-                            <span><?= htmlspecialchars($client['adresse']) ?></span>
-                        </div>
-                        <div class="info-item">
-                            <label>Email</label>
-                            <span><?= htmlspecialchars($client['mail']) ?></span>
-                        </div>
-                    </div>
-
-                    <!-- Commandes -->
-                    <?php foreach ($client['commandes'] as $commande): ?>
-                        <div class="commande-bloc">
-
-                            <div class="commande-header">
-                                <span class="commande-date">
-                                     <?= date('d/m/Y', strtotime($commande['date'])) ?>
-                                </span>
-                                <div class="commande-meta">
-                                    <span class="montant">
-                                        <?= number_format($commande['montant'], 2) ?> FCFA
-                                    </span>
-                                    <span class="statut statut-<?= $commande['statut'] ?>">
-                                        <?= match($commande['statut']) {
-                                            'en_cours' => 'En cours',
-                                            'payee'    => 'Payée',
-                                            'annulee'  => 'Annulée',
-                                            default    => $commande['statut']
-                                        } ?>
-                                    </span>
+                    <!-- En-tête client cliquable -->
+                    <div class="client-header" onclick="toggleClient(<?= $i ?>)">
+                        <div class="client-infos">
+                            <div class="avatar"><?= htmlspecialchars($initiales) ?></div>
+                            <div>
+                                <div class="client-nom">
+                                    <?= htmlspecialchars($client['nom']) ?>
+                                    <?= htmlspecialchars($client['prenom']) ?>
+                                </div>
+                                <div class="client-details">
+                                    <?= htmlspecialchars($client['ville']) ?> •
+                                    <?= htmlspecialchars($client['mail']) ?>
                                 </div>
                             </div>
-
-                            <!-- Tableau des produits -->
-                            <table class="produits-table">
-                                <thead>
-                                    <tr>
-                                        <th>Désignation</th>
-                                        <th>Catégorie</th>
-                                        <th>Prix unitaire</th>
-                                        <th>Quantité</th>
-                                        <th>Sous-total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($commande['produits'] as $produit): ?>
-                                        <tr>
-                                            <td><?= htmlspecialchars($produit['designation']) ?></td>
-                                            <td><?= htmlspecialchars($produit['catégorie']) ?></td>
-                                            <td><?= number_format($produit['prix'], 2) ?> FCFA</td>
-                                            <td><?= $produit['qté_comm'] ?></td>
-                                            <td><?= number_format($produit['sous_total'], 2) ?> FCFA</td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-
                         </div>
-                    <?php endforeach; ?>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="badge-nb"><?= $nbCommandes ?> commande<?= $nbCommandes > 1 ? 's' : '' ?></span>
+                            <span class="chevron" id="chevron-<?= $i ?>"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3klEQVR4AeySMQrCQBBFg5ewEBHxHOJtLOxsvIONR7HwCiJeQkTEwmP4XsAUurvZFCkCG+ZnJzN//l+GjKqen2LQuuCyorKiascOxiAW9raxpvXUX7SBsAcXMAG/Yc3egcYaBCNlcGTiBhZAIQVJ6zC3Zk/Oqa4GXimDN/wleIAZUFBhYW7Nnhy5UP4jZSDbQQXufCh45rwCc2v25FAKR5uBUy9eK+Bt55xTYG7NHp/xyDFwWiFv66n4N7eXRK6BIoornHVzB0QXA/ne/mmSi64GuboNrxg0q4glw1/RBwAA//8ha2D3AAAABklEQVQDABNPIjF5ZB/4AAAAAElFTkSuQmCC" /></span>
+                        </div>
+                    </div>
 
+                    <!-- Corps client -->
+                    <div class="client-body" id="body-<?= $i ?>">
+
+                        <!-- Infos client -->
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Âge</label>
+                                <span><?= htmlspecialchars($client['age']) ?> ans</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Ville</label>
+                                <span><?= htmlspecialchars($client['ville']) ?></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Adresse</label>
+                                <span><?= htmlspecialchars($client['adresse']) ?></span>
+                            </div>
+                            <div class="info-item">
+                                <label>Email</label>
+                                <span><?= htmlspecialchars($client['mail']) ?></span>
+                            </div>
+                        </div>
+
+                        <!-- Commandes -->
+                        <?php foreach ($client['commandes'] as $commande): ?>
+                            <div class="commande-bloc">
+
+                                <div class="commande-header">
+                                    <span class="commande-date">
+                                        <?= date('d/m/Y', strtotime($commande['date'])) ?>
+                                    </span>
+                                    <div class="commande-meta">
+                                        <span class="montant">
+                                            <?= number_format($commande['montant'], 2) ?> FCFA
+                                        </span>
+                                        <span class="statut statut-<?= $commande['statut'] ?>">
+                                            <?= match ($commande['statut']) {
+                                                'en_cours' => 'En cours',
+                                                'payee'    => 'Payée',
+                                                'annulee'  => 'Annulée',
+                                                default    => $commande['statut']
+                                            } ?>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Tableau des produits -->
+                                <table class="produits-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Désignation</th>
+                                            <th>Catégorie</th>
+                                            <th>Prix unitaire</th>
+                                            <th>Quantité</th>
+                                            <th>Sous-total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($commande['produits'] as $produit): ?>
+                                            <tr>
+                                                <td><?= htmlspecialchars($produit['designation']) ?></td>
+                                                <td><?= htmlspecialchars($produit['catégorie']) ?></td>
+                                                <td><?= number_format($produit['prix'], 2) ?> FCFA</td>
+                                                <td><?= $produit['qté_comm'] ?></td>
+                                                <td><?= number_format($produit['sous_total'], 2) ?> FCFA</td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        <?php endforeach; ?>
+
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
 
-</div>
-<footer>
-      <?php
+    </div>
+    <footer>
+        <?php
         echo "<button><a href='accueil.php'>Quitter</a></button>"
-      ?>
+        ?>
     </footer>
-<script>
-    function toggleClient(i) {
-        const body    = document.getElementById('body-' + i);
-        const chevron = document.getElementById('chevron-' + i);
-        body.classList.toggle('ouvert');
-        chevron.classList.toggle('ouvert');
-    }
-</script>
+    <script>
+        function toggleClient(i) {
+            const body = document.getElementById('body-' + i);
+            const chevron = document.getElementById('chevron-' + i);
+            body.classList.toggle('ouvert');
+            chevron.classList.toggle('ouvert');
+        }
+    </script>
 </body>
+
 </html>

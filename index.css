@@ -9,7 +9,7 @@ body {
   letter-spacing: normal;
   padding: 0;
   margin: 0;
-  background-image: url('/projetphp/formulaire.avif');
+  background-image: url("/projetphp/formulaire.avif");
   background-position: center;
   background-size: cover;
 }

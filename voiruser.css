@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f9f9f9; /* blanc cassé frais */
   color: #333;
   padding: 20px;
@@ -16,7 +16,7 @@ table {
   margin: 0 auto;
   border-collapse: collapse; /*les bordures arrondies fusionnent. le rendu est plus propre et plus professionnelle*/
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -61,5 +61,5 @@ footer button a {
 footer button:hover {
   background: #89f7fe;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
